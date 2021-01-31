@@ -43,5 +43,8 @@ describe('Device', () => {
     const deviceItems = await waitFor(() => getAllByRole('listitem'));
     expect(getByText(/Device List/i)).toBeInTheDocument();
     expect(deviceItems).toHaveLength(2);
+    expect(axios.get).toHaveBeenCalledWith(
+      "https://run.mocky.io/v3/15f306d0-2e7c-49a7-aa54-c7a5aa15f281"
+    );
   });
 });
